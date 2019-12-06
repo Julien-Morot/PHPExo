@@ -10,7 +10,7 @@
 </div>
 <div class="trait"></div>
 <p>Publié le : <?php echo $post->getAddedDatetime() ?><br>
-<p>Type de mission : </p>
+<p>Type de mission : <?php echo html_entity_decode($post->getTypeMission()) ?> </p>
 <p>Département : </p>
 <strong>Auteur : <?php echo html_entity_decode($post->getAuthor()) ?></strong></p>
 <p><?php echo html_entity_decode($post->getContent()) ?></p>
