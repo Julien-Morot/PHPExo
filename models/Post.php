@@ -12,11 +12,12 @@ class Post {
     private $added_datetime;
     private $updated_datetime;
     private $typeMission;
+    private $budgetMax;
 
     /* Constantes */
 
     /* Constructeur */
-    public function __construct($id, $author, $title, $content, $added_datetime, $updated_datetime, $typeMission) {
+    public function __construct($id, $author, $title, $content, $added_datetime, $updated_datetime, $typeMission, $budgetMax) {
         $this->id = $id;
         $this->author = $author;
         $this->title = $title;
@@ -24,6 +25,7 @@ class Post {
         $this->added_datetime = $added_datetime;
         $this->updated_datetime = $updated_datetime;
         $this->type_mission = $typeMission;
+        $this->budget_max = $budgetMax;
     }
 
     /* Getters */
@@ -48,6 +50,9 @@ class Post {
     public function getTypeMission() {
         return $this->type_mission;
     }
+    public function getBudgetMax() {
+        return $this->budget_max;
+    }
 
     /* Setters */
     public function setId($id) {
@@ -70,5 +75,8 @@ class Post {
     }
     public function setTypeMission($typeMission) {
         $this->type_mission = $typeMission;
+    }
+    public function setBudgetMax($budgetMax) {
+        $this->budget_max = $budgetMax;
     }
 }

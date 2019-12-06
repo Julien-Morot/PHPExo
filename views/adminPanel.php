@@ -20,7 +20,16 @@
     
     <label for="type_mission">Type de Mission :</label></br>
 
-    <input type="text" id="type_mission" name="type_mission" class="form-control"/></br>
+    <select type="text"  id="type_mission" name="type_mission" class="form-control" >
+        <option value="">--Please choose an option--</option>
+        <option value="mobile">Application Mobile</option>
+        <option value="web">Développement Web</option>
+        <option value="goldfish">Goldfish</option>
+    </select>
+
+    <label for="budgetMax">Budget :</label></br>
+
+    <input type="text" id="budgetMax" name="budgetMax" class="form-control"/></br>
 
     <label for="content">Contenu :</label></br>
 

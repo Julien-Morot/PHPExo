@@ -101,8 +101,9 @@ if (isset($_GET['controller'])) {
                     $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : NULL;
                     $content = isset($_POST['content']) ? htmlspecialchars($_POST['content']) : NULL;
                     $typeMission = isset($_POST['type_mission']) ? htmlspecialchars($_POST['type_mission']) : NULL;
+                    $budgetMax = isset($_POST['budgetMax']) ? htmlspecialchars($_POST['budgetMax']) : NULL;
                     $newAdminController = new AdminController();
-                    $newAdminController->postAction($title, $content, $typeMission);
+                    $newAdminController->postAction($title, $content, $typeMission, $budgetMax);
                 }
                 // Modifier un billet
                 elseif ($_GET['action'] == 'editPostAction') {

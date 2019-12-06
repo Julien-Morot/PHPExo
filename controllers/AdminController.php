@@ -33,15 +33,15 @@ class AdminController {
     }
 
     // Publier un nouveau billet depuis la page d'administration
-    public function postAction($title, $content, $typeMission)
+    public function postAction($title, $content, $typeMission, $budgetMax)
     {
         // Si la requête serveur est une méthode POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST')
         {
-            if (!empty($title) && !empty($content) && !empty($typeMission))
+            if (!empty($title) && !empty($content) && !empty($typeMission) && !empty($budgetMax))
             {
                 $newPostManager = new PostManager();
-                $newPostManager->addPost($title, $content, $typeMission);
+                $newPostManager->addPost($title, $content, $typeMission, $budgetMax);
                 $newMessage = new Message();
                 $newMessage->setSuccess("<p>Merci, votre billet a bien été publié !</p>");
             }
