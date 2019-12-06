@@ -30,6 +30,7 @@
     </div>
 
     <div class="form-group">
+    
         <label for="">Grade "Client / Expert / Contributeur" :</label>
         <input type="grade" name="grade" class="form-control" value="<?php if(isset($grade)) { echo $grade; } ?>">
     </div>

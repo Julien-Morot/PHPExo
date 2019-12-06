@@ -10,14 +10,22 @@
 <br/>
 
 <!-- Publier un nouvel article -->
-<h4>Publier un article</h4>
+<h4>Publier une Mission</h4>
 <br />
 <br />
 <form action="?controller=AdminController&action=postAction" method="post">
-    <label for="title">Titre :</label></br>
+    <label for="title">Titre de la mission:</label></br>
+
     <input type="text" id="title" name="title" class="form-control"/></br>
+    
+    <label for="type_mission">Type de Mission :</label></br>
+
+    <input type="text" id="type_mission" name="type_mission" class="form-control"/></br>
+
     <label for="content">Contenu :</label></br>
+
     <textarea id="content" name="content" cols="30" rows="5" class="mceEditor"></textarea></br>
+
     <button class="btn btn-primary">Publier</button>
 </form>
 <hr>

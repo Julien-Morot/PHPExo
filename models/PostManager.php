@@ -11,13 +11,13 @@ class PostManager extends Manager {
         $newManager = new Manager();
         $db = $newManager->dbConnect();
         // Requête
-        $request = $db->query('SELECT id, author, title, content, DATE_FORMAT(added_datetime, \'le %d/%m/%Y à %Hh%i\') AS added_datetime_fr, DATE_FORMAT(updated_datetime, \'le %d/%m/%Y à %Hh%i\') AS updated_datetime_fr FROM posts ORDER BY added_datetime DESC');
+        $request = $db->query('SELECT id, author, title, content, type_mission, DATE_FORMAT(added_datetime, \'le %d/%m/%Y à %Hh%i\') AS added_datetime_fr, DATE_FORMAT(updated_datetime, \'le %d/%m/%Y à %Hh%i\') AS updated_datetime_fr FROM posts ORDER BY added_datetime DESC');
         // Résultat
         $request->execute(array());
         $result = $request->fetchAll();
         $posts = [];
         foreach ($result as $post) {
-            $newPost = new Post($post['id'], $post['author'], $post['title'], $post['content'], $post['added_datetime_fr'], $post['updated_datetime_fr']);
+            $newPost = new Post($post['id'], $post['author'], $post['title'], $post['content'], $post['added_datetime_fr'], $post['updated_datetime_fr'], $post['type_mission']);
             $posts[] = $newPost;
         }
         return $posts;
@@ -56,24 +56,24 @@ class PostManager extends Manager {
         $newManager = new Manager();
         $db = $newManager->dbConnect();
         // Requête
-        $request = $db->prepare('SELECT id, author, title, content, DATE_FORMAT(added_datetime, \'%d/%m/%Y à %Hh%i\') AS added_datetime_fr, DATE_FORMAT(updated_datetime, \'le %d/%m/%Y à %Hh%i\') AS updated_datetime_fr FROM posts WHERE id = ?');
+        $request = $db->prepare('SELECT id, author, title, content, type_mission, DATE_FORMAT(added_datetime, \'%d/%m/%Y à %Hh%i\') AS added_datetime_fr, DATE_FORMAT(updated_datetime, \'le %d/%m/%Y à %Hh%i\') AS updated_datetime_fr FROM posts WHERE id = ?');
         // Exécute la requête
         $request->execute(array($id));
         // Résultat
         $post = $request->fetch();
-        return new Post($post['id'], $post['author'], $post['title'], $post['content'], $post['added_datetime_fr'], $post['updated_datetime_fr']);
+        return new Post($post['id'], $post['author'], $post['title'], $post['content'], $post['added_datetime_fr'], $post['updated_datetime_fr'], $post['type_mission']);
     }
 
     // Créer un nouveau billet
-    public function addPost($title, $content)
+    public function addPost($title, $content, $typeMission)
     {
         // Connexion à la base de données
         $newManager = new Manager();
         $db = $newManager->dbConnect();
         // Requête
-        $request = $db->prepare('INSERT INTO posts (author, title, content, added_datetime) VALUES ("Jean Forteroche", ?, ?, NOW())');
+        $request = $db->prepare('INSERT INTO posts (author, title, content, type_mission, added_datetime) VALUES ("Jean Forteroche", ?, ?, ?, NOW())');
         // Execution
-        $request->execute(array($title, $content));
+        $request->execute(array($title, $content, $typeMission));
     }
 
     // Modifier un billet existant

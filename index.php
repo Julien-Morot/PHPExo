@@ -100,8 +100,9 @@ if (isset($_GET['controller'])) {
                     // Conditions ternaires
                     $title = isset($_POST['title']) ? htmlspecialchars($_POST['title']) : NULL;
                     $content = isset($_POST['content']) ? htmlspecialchars($_POST['content']) : NULL;
+                    $typeMission = isset($_POST['type_mission']) ? htmlspecialchars($_POST['type_mission']) : NULL;
                     $newAdminController = new AdminController();
-                    $newAdminController->postAction($title, $content);
+                    $newAdminController->postAction($title, $content, $typeMission);
                 }
                 // Modifier un billet
                 elseif ($_GET['action'] == 'editPostAction') {

@@ -11,17 +11,19 @@ class Post {
     private $content;
     private $added_datetime;
     private $updated_datetime;
+    private $typeMission;
 
     /* Constantes */
 
     /* Constructeur */
-    public function __construct($id, $author, $title, $content, $added_datetime, $updated_datetime) {
+    public function __construct($id, $author, $title, $content, $added_datetime, $updated_datetime, $typeMission) {
         $this->id = $id;
         $this->author = $author;
         $this->title = $title;
         $this->content = $content;
         $this->added_datetime = $added_datetime;
         $this->updated_datetime = $updated_datetime;
+        $this->type_mission = $typeMission;
     }
 
     /* Getters */
@@ -43,6 +45,9 @@ class Post {
     public function getUpdatedDatetime() {
         return $this->updated_datetime;
     }
+    public function getTypeMission() {
+        return $this->type_mission;
+    }
 
     /* Setters */
     public function setId($id) {
@@ -62,5 +67,8 @@ class Post {
     }
     public function setUpdatedDatetime($updated_datetime) {
         $this->updated_datetime = $updated_datetime;
+    }
+    public function setTypeMission($typeMission) {
+        $this->type_mission = $typeMission;
     }
 }
