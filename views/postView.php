@@ -11,10 +11,16 @@
 <div class="trait"></div>
 <p>Publié le : <?php echo $post->getAddedDatetime() ?><br>
 <p>Type de mission : <?php echo html_entity_decode($post->getTypeMission()) ?> </p>
+<p>Budget  : <?php echo html_entity_decode($post->getbudgetMax()) ?> € </p>
 <p>Département : </p>
 <strong>Auteur : <?php echo html_entity_decode($post->getAuthor()) ?></strong></p>
 <p><?php echo html_entity_decode($post->getContent()) ?></p>
+
 <hr>
+
+<a href="" class="btn btn-primary">Rapport </a>
+
+<a href="" class="btn btn-primary">Facture </a>
 
 
 

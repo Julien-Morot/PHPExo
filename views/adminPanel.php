@@ -24,7 +24,6 @@
         <option value="">--Please choose an option--</option>
         <option value="mobile">Application Mobile</option>
         <option value="web">Développement Web</option>
-        <option value="goldfish">Goldfish</option>
     </select>
 
     <label for="budgetMax">Budget :</label></br>
