@@ -31,10 +31,10 @@
         }
      ?>
     <?php
-        if(!empty($_SESSION) && $_SESSION['grade'] == "Client") {
+        if(!empty($_SESSION) ) {
     ?>
     <?php
-        if($_SESSION['grade'] == "Client") {
+        if($_SESSION['grade'] != "Client") {
     ?>
         <a href="?controller=AdminController&action=indexAction" title="Espace d'administration">Administration</a>
         <?php
