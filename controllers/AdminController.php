@@ -4,6 +4,8 @@ namespace controllers;
 
 use models\Message;
 use models\PostManager;
+use models\FactureManager;
+
 
 class AdminController {
 
@@ -16,6 +18,13 @@ class AdminController {
         $newPostManager = new PostManager();
         $posts = $newPostManager->getPosts();
         require 'views/adminPanel.php';
+    }
+
+    public function showFacture()
+    {
+        $newFactureManager = new FactureManager();
+        $Facture = $newFactureManager->getFacture();
+        require 'views/facture.php';
     }
 
     public function clientAction()

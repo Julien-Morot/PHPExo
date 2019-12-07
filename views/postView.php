@@ -18,9 +18,9 @@
 
 <hr>
 
-<a href="" class="btn btn-primary">Rapport </a>
+<a href="?controller=AdminController&action=showRaport&id=<?php echo $post->getId() ?>" class="btn btn-primary">Rapport </a>
 
-<a href="" class="btn btn-primary">Facture </a>
+<a href="?controller=AdminController&action=showFacture&id=<?php echo $post->getId() ?>" class="btn btn-primary">Facture </a>
 
 
 

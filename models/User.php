@@ -10,6 +10,7 @@ class User {
     private $password;
     private $email;
     private $grade;
+    
 
     /* Constantes */
 

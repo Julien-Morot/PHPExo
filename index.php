@@ -3,6 +3,7 @@
 namespace controllers;
 
 session_start();
+ini_set('display_errors', 1);
 
 // Autoloader de classe
 require 'vendor/autoload.php';
@@ -55,6 +56,10 @@ if (isset($_GET['controller'])) {
                 $newPostController = new PostController();
                 $newPostController->clientAction();
             }
+            if ($_GET['action'] == 'showFacture') {
+                $newPostController = new PostController();
+                $newPostController->showFacture();
+            }
            
             // Affiche le contenu d'un billet et ses commentaires
             elseif ($_GET['action'] == 'showAction') {
@@ -93,6 +98,10 @@ if (isset($_GET['controller'])) {
                 if ($_GET['action'] == 'clientAction') {
                     $newAdminController = new AdminController();
                     $newAdminController->clientAction();
+                }
+                if ($_GET['action'] == 'showFacture') {
+                    $newAdminController = new AdminController();
+                    $newAdminController->showFacture();
                 }
                 
                 // Publier un nouveau billet
