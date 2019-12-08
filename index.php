@@ -72,7 +72,6 @@ if (isset($_GET['controller'])) {
                 $newPostController = new PostController();
                 $newPostController->clientAction();
             }
-<<<<<<< HEAD
             if ($_GET['action'] == 'realVirtuAction') {
                 $newPostController = new PostController();
                 $newPostController->realVirtuAction();
@@ -81,8 +80,6 @@ if (isset($_GET['controller'])) {
                 $newPostController = new PostController();
                 $newPostController->infoEmbaAction();
             }
-=======
->>>>>>> fffcbe825c8004a48d405bfff04ec84e5096eb74
             if ($_GET['action'] == 'showFacture') {
                 $newPostController = new PostController();
                 $newPostController->showFacture();
