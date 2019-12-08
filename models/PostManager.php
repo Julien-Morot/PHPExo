@@ -9,7 +9,13 @@ class PostManager extends Manager {
     {
         $newManager = new Manager();
         $db = $newManager->dbConnect();
+<<<<<<< HEAD
         $request = $db->query('SELECT id, author, title, content, type_mission, budget_max, expert, DATE_FORMAT(added_datetime, \'le %d/%m/%Y à %Hh%i\') AS added_datetime_fr, DATE_FORMAT(updated_datetime, \'le %d/%m/%Y à %Hh%i\') AS updated_datetime_fr FROM posts ORDER BY added_datetime DESC');
+=======
+        // Requête
+        $request = $db->query('SELECT id, author, title, content, type_mission, budget_max, expert, DATE_FORMAT(added_datetime, \'le %d/%m/%Y à %Hh%i\') AS added_datetime_fr, DATE_FORMAT(updated_datetime, \'le %d/%m/%Y à %Hh%i\') AS updated_datetime_fr FROM posts ORDER BY added_datetime DESC');
+        // Résultat
+>>>>>>> fffcbe825c8004a48d405bfff04ec84e5096eb74
         $request->execute(array());
         $result = $request->fetchAll();
         $posts = [];
