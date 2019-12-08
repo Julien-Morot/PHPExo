@@ -24,7 +24,6 @@
         <option value="">--Choissisez une option--</option>
         <option value="mobile">Application Mobile</option>
         <option value="web">Développement Web</option>
-        <option value="goldfish">Goldfish</option>
     </select><br>
 
     <label for="budgetMax">Budget Max :</label></br>
@@ -42,7 +41,7 @@
 
 <!-- Liste des billets en ligne -->
 <?php
-    include 'inc/_onlinePosts.php';
+    include 'inc/_onlinePostsClient.php';
 ?>
 <br />
 

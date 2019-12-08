@@ -3,6 +3,7 @@
 namespace controllers;
 
 session_start();
+ini_set('display_errors', 1);
 
 // Autoloader de classe
 require 'vendor/autoload.php';
@@ -47,6 +48,22 @@ if (isset($_GET['controller'])) {
                 $newPostController = new PostController();
                 $newPostController->RespDepAction();
             }
+            if ($_GET['action'] == 'comAction') {
+                $newPostController = new PostController();
+                $newPostController->comAction();
+            }
+            if ($_GET['action'] == 'sysInfAction') {
+                $newPostController = new PostController();
+                $newPostController->sysInfAction();
+            }
+            if ($_GET['action'] == 'webAction') {
+                $newPostController = new PostController();
+                $newPostController->webAction();
+            }
+            if ($_GET['action'] == 'resSecAction') {
+                $newPostController = new PostController();
+                $newPostController->resSecAction();
+            }
             if ($_GET['action'] == 'indexAction') {
                 $newPostController = new PostController();
                 $newPostController->indexAction();
@@ -54,6 +71,18 @@ if (isset($_GET['controller'])) {
             if ($_GET['action'] == 'clientAction') {
                 $newPostController = new PostController();
                 $newPostController->clientAction();
+            }
+            if ($_GET['action'] == 'realVirtuAction') {
+                $newPostController = new PostController();
+                $newPostController->realVirtuAction();
+            }
+            if ($_GET['action'] == 'infoEmbaAction') {
+                $newPostController = new PostController();
+                $newPostController->infoEmbaAction();
+            }
+            if ($_GET['action'] == 'showFacture') {
+                $newPostController = new PostController();
+                $newPostController->showFacture();
             }
            
             // Affiche le contenu d'un billet et ses commentaires
@@ -85,7 +114,30 @@ if (isset($_GET['controller'])) {
                     $newAdminController = new AdminController();
                     $newAdminController->RespDepAction();
                 }
-                // Affiche les billets en ligne et les commentaires signalés
+                if ($_GET['action'] == 'sysInfAction') {
+                    $newAdminController = new AdminController();
+                    $newAdminController->sysInfAction();
+                }
+                if ($_GET['action'] == 'webAction') {
+                    $newAdminController = new AdminController();
+                    $newAdminController->webAction();
+                }
+                if ($_GET['action'] == 'comAction') {
+                    $newAdminController = new AdminController();
+                    $newAdminController->comAction();
+                }
+                if ($_GET['action'] == 'realVirtuAction') {
+                    $newAdminController = new AdminController();
+                    $newAdminController->realVirtuAction();
+                }
+                if ($_GET['action'] == 'infoEmbaAction') {
+                    $newAdminController = new AdminController();
+                    $newAdminController->infoEmbaAction();
+                }
+                if ($_GET['action'] == 'resSecAction') {
+                    $newAdminController = new AdminController();
+                    $newAdminController->resSecAction();
+                }
                 if ($_GET['action'] == 'indexAction') {
                     $newAdminController = new AdminController();
                     $newAdminController->indexAction();
@@ -93,6 +145,10 @@ if (isset($_GET['controller'])) {
                 if ($_GET['action'] == 'clientAction') {
                     $newAdminController = new AdminController();
                     $newAdminController->clientAction();
+                }
+                if ($_GET['action'] == 'showFacture') {
+                    $newAdminController = new AdminController();
+                    $newAdminController->showFacture();
                 }
                 
                 // Publier un nouveau billet

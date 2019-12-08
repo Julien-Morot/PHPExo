@@ -108,6 +108,18 @@ class UserController {
                         header('Location: ?controller=AdminController&action=clientAction');
                     } elseif($checkedUserParams['grade'] == 'ResponsableDep'){
                         header('Location: ?controller=AdminController&action=RespDepAction');
+                    } elseif($checkedUserParams['grade'] == 'Commercial'){
+                        header('Location: ?controller=AdminController&action=comAction');
+                    } elseif($checkedUserParams['grade'] == 'Sys.Inf'){
+                        header('Location: ?controller=AdminController&action=sysInfAction');
+                    } elseif($checkedUserParams['grade'] == 'Web'){
+                        header('Location: ?controller=AdminController&action=webAction');
+                    } elseif($checkedUserParams['grade'] == 'RealVirtuelle'){
+                        header('Location: ?controller=AdminController&action=realVirtuAction');
+                    } elseif($checkedUserParams['grade'] == 'InfoEmba'){
+                        header('Location: ?controller=AdminController&action=infoEmbaAction');
+                    } elseif($checkedUserParams['grade'] == 'ResSec'){
+                        header('Location: ?controller=AdminController&action=resSecAction');
                     }
                 } else {
                     $newMessage->setError("<p>Vos identifiants ne sont pas bons !</p>");

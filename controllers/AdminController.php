@@ -4,6 +4,8 @@ namespace controllers;
 
 use models\Message;
 use models\PostManager;
+use models\FactureManager;
+
 
 class AdminController {
 
@@ -18,6 +20,13 @@ class AdminController {
         require 'views/adminPanel.php';
     }
 
+    public function showFacture()
+    {
+        $newFactureManager = new FactureManager();
+        $Facture = $newFactureManager->getFacture();
+        require 'views/facture.php';
+    }
+
     public function clientAction()
     {
         $newPostManager = new PostManager();
@@ -30,6 +39,48 @@ class AdminController {
         $newPostManager = new PostManager();
         $posts = $newPostManager->getPosts();
         require 'views/RespDepPanel.php';
+    }
+
+    public function comAction()
+    {
+        $newPostManager = new PostManager();
+        $posts = $newPostManager->getPosts();
+        require 'views/commercialPanel.php';
+    }
+
+    public function sysInfAction()
+    {
+        $newPostManager = new PostManager();
+        $posts = $newPostManager->getPosts();
+        require 'views/sysInfPanel.php';
+    }
+
+    public function webAction()
+    {
+        $newPostManager = new PostManager();
+        $posts = $newPostManager->getPosts();
+        require 'views/webPanel.php';
+    }
+
+    public function realVirtuAction()
+    {
+        $newPostManager = new PostManager();
+        $posts = $newPostManager->getPosts();
+        require 'views/realVirtuellePanel.php';
+    }
+
+    public function resSecAction()
+    {
+        $newPostManager = new PostManager();
+        $posts = $newPostManager->getPosts();
+        require 'views/resSecPanel.php';
+    }
+
+    public function infoEmbaAction()
+    {
+        $newPostManager = new PostManager();
+        $posts = $newPostManager->getPosts();
+        require 'views/infoEmbaPanel.php';
     }
 
     // Publier un nouveau billet depuis la page d'administration

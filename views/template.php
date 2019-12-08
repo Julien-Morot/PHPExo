@@ -31,9 +31,15 @@
         }
      ?>
     <?php
-        if(isset($_SESSION) && !empty($_SESSION)) {
+        if(!empty($_SESSION) ) {
+    ?>
+    <?php
+        if($_SESSION['grade'] != "Client") {
     ?>
         <a href="?controller=AdminController&action=indexAction" title="Espace d'administration">Administration</a>
+        <?php
+        }
+    ?>
         <a href="?controller=UserController&action=logoutAction" title="Se déconnecter">Déconnexion</a>
     <?php
         }
